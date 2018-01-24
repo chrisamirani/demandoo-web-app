@@ -1,0 +1,76 @@
+<% layout('layout-nojs') -%>
+
+    <div class="col-lg-10 col-lg-offset-1">
+        <% if(essay) { %>
+
+            <div class="panel panel-default" style="box-shadow: 2px 4px 7px #b4b4b4;">
+                <div class="panel-heading">
+                    <h3 style="margin-top: 5px;margin-bottom: 5px;">
+                        <%= essay.title%>
+                    </h3>
+                    <h4>作者： <%= essay.writer.profile.name %></h4>
+                </div>
+                <div class="panel-body">
+                    <%- essay.body %>
+                    <script>
+            function vote(){
+           
+            var voteCount = document.getElementById('voteCount');
+                    var currentVoteCount = parseInt(voteCount.innerHTML);
+                    voteCount.innerHTML = currentVoteCount + 1;
+                    
+                   
+                    var xhr = new XMLHttpRequest();
+                          xhr.open('GET', '/upvote/<%= essay._id %>');
+                          
+                          xhr.send();
+
+                }
+                
+            </script>
+                    <a onclick="vote(this);"><span class="glyphicon glyphicon-heart" style="color:red;font-size:22px;"></span></a><span id="voteCount" > <%= essay.voteCount %></span>
+                    
+                    
+                    
+                        <hr>
+                    <h3>评论：</h3>
+                        <% if(essay.comments.length > 0){ %>
+                            <% for(i=0; i < essay.comments.length; i++){ %>
+                                <p><strong><%= essay.comments[i].user.profile.name %>:</strong></p>
+                                
+                                    <%- essay.comments[i].body %>
+                                
+                                <hr>
+                                <% } %>
+                                    <% }else{ %>
+                                        <h1>没有评论</h1>
+                                        <% } %>
+                </div>
+            </div>
+
+
+
+            <% }else{ %>
+
+                <p style="font-size: 50px;text-align: center;margin-top: 203px;color: #e0e0e0;">还没人发文章！ 快去<a href="/post-essay">写第一篇</a></p>
+                <% } %>
+        <form method="post" action="/post-comment/<%= essay._id %>" name="register" enctype="application/x-www-form-urlencoded">
+
+            
+               <label >些评论：</label>
+              <div class="form-group" style="border: 1px solid #d5d5d5;
+border-radius: 6px;">
+            
+            <textarea type="text" name="comment" id="comment" class="form-control" placeholder="写你的评论。。。" rows="5" ></textarea>
+            </div>
+        <button class="btn btn-success" type="submit">发评论</button>
+     
+                        
+                   
+                
+        </form>
+    </div>
+ 
+
+
+       

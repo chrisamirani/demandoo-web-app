@@ -1,0 +1,37 @@
+<% layout('layout-nojs') -%>
+
+
+<% if(message.length>0){ %>
+            <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <%= message %>
+            </div>
+            
+            <% } %>
+
+    <div class="row" style="margin-top:20px;">
+<div class="col-xs-4">
+    <h2>发作文有什么好处呢？</h2>
+    <h3>虽然我们的<a href="/editor">语法工具</a>可以帮你提高你的作文但是跟着大家学你就会更好理解你的一些其他错误。发完作文大家可以给你评论给你建议怎么改语法，单词等等。</h3>
+    <h3>同时你可以<a href="/essays">看别人写的作文</a>慢慢把你对某些问题的观点变得更丰富。</h3>
+        </div>
+        <div class="col-xs-8">
+                    <form method="post" action="/post-essay" name="register" enctype="application/x-www-form-urlencoded">
+                <div class="form-group">
+                   <label name="title">题目：</label>
+                    <input type="text" name="title" class="form-control" >
+
+                </div>
+                        <label name="essay">我的作文：</label>
+                        <div class="form-group" style="border: 1px solid #ccc;border-radius: 5px;">
+                    
+                    <textarea name="essay" class="form-control" id="essay" rows="15" placeholder="就在这里写。。。"></textarea>
+
+                </div>
+                <button type="submit" style="width: 100%;border-radius: 5px;border: none;padding: 5px;margin-top: 10px;background-color: #7f54bd;color: white;font-size: 20px;" id="submit" style="width: 100%;">发我的作文</button>
+
+            </form>
+        </div>
+    </div>

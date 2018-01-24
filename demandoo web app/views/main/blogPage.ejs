@@ -1,0 +1,33 @@
+<% layout('layout') -%>
+
+    <div class="col-md-10 col-md-offset-1">
+        
+        <% if(blog) { %>
+        
+            <div class="panel panel-default" style="box-shadow: 2px 4px 7px #b4b4b4;">
+                <div class="panel-heading"><a href="/blog/<%= blog._id %>" id="<%= blog._id %>"><h1 style="margin-top: 5px;margin-bottom: 5px;font-weight: 700;"><%= blog.title %></h1></a></div>
+                <div class="panel-body">
+                    <%- blog.body %><span class="pull-right"> <%= blog.date.getDate() + ' ' + monthNames[blog.date.getMonth()] + ', ' + blog.date.getFullYear() %> </span>
+                </div>
+            </div>
+
+
+            
+         <% }else{ %> 
+        
+        <p style="font-size: 50px;text-align: center;margin-top: 203px;color: #e0e0e0;">没找到</p>
+         <% } %>
+        <% if(user){ %>
+         <a href="/post-essay" class="btn btn-info btn-lg" style="width:100%;" >要发新作文吗</a>
+        <% }else{ %>
+        <a href="/signup" class="btn btn-info btn-lg" style="width:100%;" >现在开始提高自己语言能力</a>
+        <% } %>
+        <br>
+        <h2>读其他 Blog：</h2>
+        <hr>
+        <% for(i=0;i < blogPosts.length;i++){ %>
+        <a href="/blog/<%= blogPosts[i]._id %>"><%= blogPosts[i].title %></a>
+        <hr>
+        <% } %>
+
+    </div>

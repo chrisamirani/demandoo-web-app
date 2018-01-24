@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+<style>
+    a:hover{
+        text-decoration:none;
+    }
+      </style>
+
+    <title></title>
+
+</head>
+
+
+<body style="margin-top:5%;height:100%" class="my-font">
+    <div class="col-lg-10 col-lg-offset-1" style="padding-right: 0px;
+padding-left: 0px;">
+
+        
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <% for (i=0;i < essays.length;i++){ %>
+            
+            <script>
+            function vote<%= i %>(){
+           
+            var voteCount = document.getElementById('voteCount<%= i %>');
+                    var currentVoteCount = parseInt(voteCount.innerHTML);
+                    voteCount.innerHTML = currentVoteCount + 1;
+                    document.getElementById("essayUpvote<%= i %>").disabled = true
+                   
+                                                    var xhr = new XMLHttpRequest();
+                          xhr.open('GET', '/mobile-essay-upvote/<%= essays[i]._id %>');
+                          
+                          xhr.send();
+
+                }
+                
+            </script>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="heading<%= i %>" style="background-color: #a36ef0;
+color: white;">
+     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= i %>" aria-expanded="false" aria-controls="collapse<%= i %>" style="text-decoration-line: none;color:white;">
+        <p class="panel-title" style="font-size: 25px;text-decoration-line: none;">
+        
+        <%= essays[i].title %>
+        
+      </p>
+         </a>
+    </div>
+    <div id="collapse<%= i %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= i %>">
+      <div class="panel-body">
+        <%- essays[i].body %>
+                    
+                    <a  id="essayUpvote<%= i %>" onclick="vote<%= i %>(this);"><span class="glyphicon glyphicon-heart" style="color:red;font-size: 22px;"></span></a> <span id="voteCount<%= i %>" ><%= essays[i].voteCount %></span>
+      </div>
+    </div>
+  </div>
+        <% } %>    
+</div>
+        
+
+    
+    </div>
+    
+</body>
+</html>

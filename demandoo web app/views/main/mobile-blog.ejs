@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+ <!-- Latest compiled and minified CSS -->
+
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+      <script src="/js/bootstrap.min.js"></script>
+		
+
+    <title></title>
+
+  </head>
+
+  <body style="margin-top:5%;height:100%" class="my-font">
+  <div class="col-lg-10 col-lg-offset-1" style="padding-right: 0px;
+padding-left: 0px;">
+        <% if(blog.length > 0) { %>
+        <% for(i=0; i < blog.length; i++) { %>
+            <div class="panel panel-default" >
+                <div class="panel-heading" style="background-color: #a36ef0;color:white;"><h3 style="margin-top: 5px;margin-bottom: 5px;"><%= blog[i].title %></h3></div>
+                <div class="panel-body">
+                    <%- blog[i].body %><span class="pull-right"> <%= blog[i].date.getDate() + ' ' + monthNames[blog[i].date.getMonth()] + ', ' + blog[i].date.getFullYear() %> </span>
+                </div>
+            </div>
+
+
+            <% } %>
+         <% }else{ %> 
+        
+        <p style="font-size: 50px;text-align: center;margin-top: 203px;color: #e0e0e0;">COMING SOON</p>
+         <% } %>
+
+    </div>
+   
+      
+
+  </body>
+</html>

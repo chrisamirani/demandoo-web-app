@@ -1,0 +1,54 @@
+﻿<% layout('layout') -%>
+
+
+
+<% if(success.length > 0){ %>
+            <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <%= success %>
+            </div>
+            
+            <% } %>
+
+    <div class="row">
+        <div class="col-md-4">
+        <img src="/imgs/mascot.png" class="img-responsive">
+        <hr>
+        <h3>修改信息：</h3>
+        <form method="post" action="/edit-profile" name="register" enctype="application/x-www-form-urlencoded">
+                <div class="checkbox">
+                    <label>
+                    <input type="checkbox" <% if(user.subscribed == 1 ){ %> checked <% } %> name="subscribe">邮件通知
+</label>
+                </div>
+                <div class="form-group">
+                    <label name="password">密码：</label>
+                    <input type="password" name="password" class="form-control"  id="password">
+
+                </div>
+                <button type="submit" class="btn btn-success"  style="width: 100%;">保存</button>
+
+            </form>
+        </div>
+       <div class="col-md-8">
+         <h1 style="text-align:center;"><%= user.profile.name %></h1>
+         <h3 style="text-align:center;">D币：<%= user.credit %></h3>
+           <hr>
+           <h1>Your Essays:</h1>
+           <% if(user.teacher == 1 ){ %>
+           <a class="btn btn-success" href="/post-model-test">发新写作模版</a>
+           <% } %>
+           <hr>
+           <% if (essays.length > 0){ %>
+           <% for(i=0; i < essays.length;i++){ %>
+           <a href="/essay/<%= essays[i]._id %>"><%- essays[i].body.slice(0,100) %></a>
+           <span class="glyphicon glyphicon-heart pull-right" style="color:red;font-size: 20px;"> <%= essays[i].voteCount %></span> 
+           <% } %>
+           <% }else{ %>
+           <p style="font-size: 50px;text-align: center;margin-top: 203px;color: #e0e0e0;">你都还没写东西！ 快去<a href="/post-essay">写第一篇</a></p>
+           <% } %>
+           
+        </div>
+    </div>

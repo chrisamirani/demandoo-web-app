@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+ <!-- Latest compiled and minified CSS -->
+
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
+      <script src="/js/custom.js"></script>
+<script src="/js/jquery.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+		
+<script type="text/javascript"
+    src="/js/jquery-1.7.0.min.js"></script>
+<script type="text/javascript"
+    src="/js/tiny_mce.js"></script>
+<script type="text/javascript"
+    src="/js/editor_plugin2.js"></script>
+      
+      <script type="text/javascript"
+    src="/js/plugins/atd-tinymce/css/content.css"></script>
+      <script type="text/javascript"
+    src="/js/plugins/atd-tinymce/css/en.js"></script>
+      <script type="text/javascript"
+    src="/js/langs/en.js"></script>
+    
+
+    <title>Demandoo 写作赛</title>
+
+  </head>
+
+  <body style="margin-top:100px;" class="my-font">
+     
+
+ 
+
+    <div class="container">
+      <!-- Example row of columns -->
+         <% if(error.length>0){ %>
+            <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <%= error %>
+            </div>
+            
+            <% } %>
+     <div class="col-xs-12">
+         <h4>Y'ello! 欢迎您参加 Demandoo 写作比赛。我们建议你提交作文前好好检查您的作文，检查语法，再提交。最好在别的地方写后再拷贝过来这里提交。</h4>
+         <h4>请记得作文要原创。不原创的作文不及格拿奖品。</h4>
+         <h4>Good Luck</h4>
+         <br>
+                    <form method="post" action="/writing-competition" name="newModel" enctype="application/x-www-form-urlencoded">
+                 <div class="form-group">
+                   <label name="title">姓名：</label>
+                    <input type="text" name="name" class="form-control" >
+
+                </div>
+                        <div class="form-group">
+                   <label name="title">邮箱地址：</label>
+                    <input type="text" name="email" class="form-control" >
+
+                </div>
+                         <div class="form-group">
+                   <label name="title">微信号：</label>
+                    <input type="text" name="wechat" class="form-control" >
+
+                </div>
+                        <label name="essay">作文：</label>
+                        <div class="form-group" style="border: 1px solid #ccc;
+border-radius: 5px;">
+                    
+                    <textarea name="essay" class="form-control" id="essay" rows="15"  placeholder="就在这里写。。。"></textarea>
+
+                </div>
+                <button type="submit" style="width: 100%;border-radius: 5px;border: none;padding: 5px;margin-top: 10px;background-color: #7f54bd;color: white;font-size: 20px;" id="submit" style="width: 100%;">提交作文</button>
+
+            </form>
+        </div>
+    
+
+      
+    </div> <!-- /container -->
+
+      
+
+  </body>
+</html>
+        
+
+
+
+
+
+
+

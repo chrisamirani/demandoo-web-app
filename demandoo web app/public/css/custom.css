@@ -1,0 +1,202 @@
+
+body
+{
+    padding-top: 0;
+    overflow-x: hidden;
+}
+
+footer{
+  position:relative;
+  height:auto;
+  width: 100%;
+  background-color:#08041e;
+  margin-top: 500px;
+    color:aliceblue;
+    border-color: aqua;
+    border-width: thick;
+  
+}
+#jumbo-gap{
+    margin-top:0 auto;
+    width: 100%;
+   /* background-image: url(../imgs/5-bg.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;*/
+}
+#footer-gap{
+    margin-bottom: -15%;
+}
+
+logo{
+    height: 100%;
+    width: auto;
+}
+
+
+
+
+@font-face {
+	font-family: cool_font;
+	src:url('roboto.ttf');
+}
+
+.my-font{
+    font-family: cool_font;
+    font-size:15px;
+}
+
+.profile-pic{
+    
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    background-image: url(../imgs/profile_pic.jpg);
+    background-repeat: no-repeat;
+}
+.profile-pic img{
+height: 100%;
+width: 100%;
+position: relative;
+max-width: none;
+}
+
+.product-pic{
+    
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+}
+.product-pic img{
+height: 100%;
+width: 100%;
+position: relative;
+max-width: none;
+}
+
+.media-object {
+    display: block;
+    height: 75px;
+    width: 100px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.media{
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.dashboard-icon{
+    padding-right:15px;
+    /*margin-top:-25px;*/
+}
+
+.product-thumb{
+    height: 200px;
+width: 100%;
+overflow: hidden;
+
+}
+
+
+.thumbnail{
+    border-radius: 15px;
+    padding: 0px;
+}
+
+.thumbnail-btn{
+    padding-top: 10px;
+margin-bottom: -10px;
+text-align: center;
+margin-right: -10px;
+margin-left: -10px;
+
+}
+.thumbnail-btn-radius{
+    border-radius: 0px;
+border-bottom-right-radius: 15px;
+border-bottom-left-radius: 15px;
+width: 100%;
+    font-size: 17px;
+
+
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #000;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #000;
+}
+
+.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
+    color: #3bcec8;
+}
+
+
+    .onoffswitch {
+        position: relative; width: 68px;
+        -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    }
+    .onoffswitch-checkbox {
+        display: none;
+    }
+    .onoffswitch-label {
+        display: block; overflow: hidden; cursor: pointer;
+        border: 2px solid #999999; border-radius: 23px;
+    }
+    .onoffswitch-inner {
+        display: block; width: 200%; margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+    }
+    .onoffswitch-inner:before, .onoffswitch-inner:after {
+        display: block; float: left; width: 50%; height: 21px; padding: 0; line-height: 21px;
+        font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+        box-sizing: border-box;
+    }
+    .onoffswitch-inner:before {
+        content: "ON";
+        padding-left: 10px;
+        background-color: #47E68F; color: #FFFFFF;
+    }
+    .onoffswitch-inner:after {
+        content: "OFF";
+        padding-right: 10px;
+        background-color: #EEEEEE; color: #999999;
+        text-align: right;
+    }
+    .onoffswitch-switch {
+        display: block; width: 34px; margin: -6.5px;
+        background: #FFFFFF;
+        position: absolute; top: 0; bottom: 0;
+        right: 43px;
+        border: 2px solid #999999; border-radius: 23px;
+        transition: all 0.3s ease-in 0s; 
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+        margin-left: 0;
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        right: 0px; 
+    }
+
+.slider-btn:hover {
+    border: 1px solid #aef2f5;
+}
+.slider-btn{
+    border-color: #fff;
+}
+
+.gram-btn{
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    background-color: #7f54bd;
+    color: white;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.gram-btn:hover {
+    background-color: #a26eef;
+}

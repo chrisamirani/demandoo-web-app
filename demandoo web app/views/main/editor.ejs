@@ -1,0 +1,30 @@
+﻿<% layout('layout-nojs') -%>
+
+    
+        <div class="col-xs-12">
+<form name="checkform"  method="post" style="border: 1px solid #e4e4e4;border-radius: 5px;margin-top:50px;">
+    <div style="background-color: #7f54bd;width: 100%;border-top-left-radius: 5px;border-top-right-radius: 5px;padding:2px;">
+        <h1 style="color: white;
+text-align: center;">英语智能语法修改器</h1>
+    </div>
+ 
+  <p id="checktextpara">
+      <textarea id="checktext" name="text" style="width: 100%"
+        rows="20">这里开始 writing 吧。加油！</textarea>
+  </p>
+ 
+  <div style="padding: 10px;">
+      <select name="lang" id="lang">
+          <option value="en-US">English</option>
+      </select>
+      <input type="submit" name="_action_checkText"
+          value="检查语法" onClick="doit();return false;" style="width: 100%;border-radius: 5px;border: none;padding: 5px;margin-top: 10px;background-color: #7f54bd;color: white;font-size: 20px;">
+      <div id="feedbackErrorMessage" style="color: red;"></div>
+  </div>
+ <style scoped="true">
+    
+    </style>
+</form>
+
+        </div>
+

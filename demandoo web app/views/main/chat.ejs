@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<%= description %>">
+    <meta name="author" content="Demandoo">
+ <!-- Latest compiled and minified CSS -->
+
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
+      <script src="/js/custom.js"></script>
+<script src="/js/jquery.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+		
+
+    <title><%= title %></title>
+
+  </head>
+
+  <body style="margin-top:5%;height:50%" class="my-font">
+      <% include ../partials/header %>
+
+ 
+
+    <div class="container" style="height:100%">
+      <!-- Example row of columns -->
+     
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+
+<div style="height:100%">
+    
+<div style="width:100%;height:100%;">
+    <img src="/imgs/chatter.png"/ style="width:100%;
+margin-bottom: -13px;">
+<div  style="width: 100%;height: 60px;background: #7f54bd;border-top-left-radius: 5px;border-top-right-radius: 5px;"><h4 id="chatTitle" style="text-align: center;padding-top: 15px;color: white;"></h4></div>
+<div id="output" style="width:100%;height:100%;overflow-y: scroll;padding: 15px;border: 1px solid #eaeaea;">
+    
+    </div>  
+    <input type="text" id="message" style="width:100%;height:50px;border: 1px solid #ededed;" placeholder="写个 message 呗 。。。">
+    <input type="text" hidden="hidden" value="<%= user.profile.name %>" id="userName">
+    <input type="text" hidden="hidden" value="<%= user._id %>" id="userId">
+    <button type="button" id="send" style="width: 100%;border: none;background-color: #7f54bd;color: white;font-size: 20px;border-bottom-left-radius: 5px;
+border-bottom-right-radius: 5px;" onclick="sendData();">Send</button>
+</div>
+</div>
+<script src="/js/chat.js"></script>
+
+      
+    </div> <!-- /container -->
+      
+
+  </body>
+    <div hidden="hidden" id="userCount"></div>
+
+</html>

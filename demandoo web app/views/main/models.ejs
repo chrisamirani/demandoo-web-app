@@ -1,0 +1,34 @@
+<% layout('layout') -%>
+
+
+<div class="row">
+                    <% if(models.length > 0) { %>
+                        <% for(i=0;i < models.length ; i++) { %>
+
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <div class="cthumbnail" >
+                                        <p style="text-align: center;font-size: 6em;"><%= models[i].testType %></p>
+                                    </div>
+
+                                   <div class="caption">
+                                        <h3>
+                                            <%= models[i].title.slice(0,50) %> ...
+                                       </h3>
+                                        
+                                    <p>成绩: <%= models[i].score %></p>
+                                          
+                                        
+                                        <p class="thumbnail-btn">
+                                            <a href="/model-test/<%= models[i]._id %>" class="btn btn-success thumbnail-btn-radius" role="button">读</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <% } %>
+                
+ <% }else{ %>
+    <h1 style="text-align:center;">暂时没有这些模版</h1>
+    <% } %>
+    </div>

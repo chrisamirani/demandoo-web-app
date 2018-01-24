@@ -1,0 +1,24 @@
+﻿<% layout('layout') -%>
+
+    <div class="col-lg-10 col-lg-offset-1">
+        <h1>作文圈：</h1>
+        <hr>
+        <% if(essays.length > 0) { %>
+        <% for(i=0; i < essays.length; i++) { %>
+            <div class="panel panel-default" style="box-shadow: 2px 4px 7px #b4b4b4;">
+                <div class="panel-heading"><h3 style="margin-top: 5px;margin-bottom: 5px;"><%= essays[i].title %></h3></div>
+                <div class="panel-body">
+                    <%- essays[i].body.slice(0,600) %> ...
+                    
+                    <p><span class="pull-right"><a class="btn btn-small btn-success" href="/essay/<%= essays[i]._id %>">看全文评论</a></span></p>
+                </div>
+            </div>
+
+
+            <% } %>
+         <% }else{ %> 
+        
+        <p style="font-size: 50px;text-align: center;margin-top: 203px;color: #e0e0e0;">还没人发文章！ 快去<a href="/post-essay">写第一篇</a></p>
+         <% } %>
+
+    </div>

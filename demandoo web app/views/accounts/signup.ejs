@@ -1,0 +1,58 @@
+<% layout('layout') -%>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-offset-3">
+            <div class="panel panel-default" style="box-shadow: 5px 5px 8px #c3c3c3;">
+              <div class="panel-body">
+            <% if(errors.length>0){ %>
+            <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <%= errors %>
+            </div>
+            
+            <% } %>
+            
+            
+            <h2>注册：</h2><span class="pull-right">已经注册了？ <a href="/login">那就登录呗</a></span>
+            <form method="post" action="/signup" name="register">
+                <div class="form-group">
+                   <label name="name">用户名：</label>
+                    <input type="text" name="name" class="form-control" >
+
+                </div>
+                <div class="form-group">
+                    <label name="Email">邮箱地址：</label>
+                    <input type="email" name="email" class="form-control" oninput="verifyEmail(this);">
+                    <div class="alert alert-danger" role="alert" id="badEmail" style="visibility:hidden"><span >你确定这个是一个邮箱地址吗？好像不是喔！</span></div>
+
+                </div>
+                <div class="form-group" id="pwdFrm">
+                    <label name="password">密码：</label>
+                    <input type="password" name="password" class="form-control" ng-model="pwd" id="password" oninput="verifyEmail(this);">
+
+                </div>
+                <div class="form-group" id="pwdCrmFrm">
+                    <label name="password">确认密码：</label>
+                    <input type="password" name="passwordConfirm" class="form-control" id="passwordConfirm" oninput="Validate(this);">
+                    <div class="alert alert-danger" role="alert" id="nomatch" style="visibility:hidden"><span >你这两个密码不同喔！</span></div>
+
+                </div>
+                <div class="checkbox">
+
+
+                    <label> 
+                       <input type="checkbox" name="termsRead" id="termsRead" onchange="Validate(this);">我已经读了 <a href="/tou">网站使用规律</a>
+                    
+                    </label>
+
+
+                        </div>
+                <button type="submit" class="btn btn-success" disabled="true" id="sign-submit" style="width: 100%;">注册</button>
+
+            </form>
+                </div>
+            </div>
+        </div>
+    </div>
